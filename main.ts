@@ -11,7 +11,25 @@ let hamburger: Sprite = null
 let randomFoodItem = 0
 let hungryTim: Sprite = null
 info.setScore(0)
-info.startCountdown(20)
+info.startCountdown(40)
+let girl = sprites.create(img`
+    f f f f f f f 2 2 f f f f 2 2 f 
+    f f f f f f f 2 2 2 f f 2 2 2 f 
+    f f f f f f f 2 2 2 2 2 2 2 2 f 
+    f f f d d d d 2 2 2 d d 2 2 2 f 
+    f f d d d d d 2 2 2 d d 2 2 2 f 
+    f f d d d d d 2 2 d d d d 2 2 f 
+    f f d d f f d d d f f d d d f f 
+    f f d f d d f d f d d f d d f f 
+    f f d d 1 f d d d f 1 d d d f f 
+    f a d d 1 f d d d f 1 d d d a f 
+    f a d d d d d e d d d d d d a f 
+    f a d d d d e e e d d d d d a f 
+    f f d d 3 d d d d d 3 d d d f f 
+    f f d d d 3 d d d 3 d d d d f f 
+    f f d d d d 3 3 3 d d d d d f f 
+    f f d d d d d d d d d d d d f f 
+    `, SpriteKind.Player)
 scene.setBackgroundColor(9)
 hungryTim = sprites.create(img`
     . . f . f . f . . f . f . f . . 
