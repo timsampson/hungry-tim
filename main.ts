@@ -12,6 +12,7 @@ let randomFoodItem = 0
 let hungryTim: Sprite = null
 info.setScore(0)
 info.startCountdown(40)
+scene.setBackgroundColor(9)
 let girl = sprites.create(img`
     f f f f f f f 2 2 f f f f 2 2 f 
     f f f f f f f 2 2 2 f f 2 2 2 f 
@@ -30,7 +31,6 @@ let girl = sprites.create(img`
     f f d d d d 3 3 3 d d d d d f f 
     f f d d d d d d d d d d d d f f 
     `, SpriteKind.Player)
-scene.setBackgroundColor(9)
 hungryTim = sprites.create(img`
     . . f . f . f . . f . f . f . . 
     f f f f f f f f f f f f f f f f 
@@ -49,8 +49,12 @@ hungryTim = sprites.create(img`
     . d d d d 2 2 2 2 2 2 2 d d d . 
     . . d d d d d d d d d d d d . . 
     `, SpriteKind.Player)
+controller.player1.moveSprite(hungryTim)
+controller.player2.moveSprite(girl)
 hungryTim.setStayInScreen(true)
-controller.moveSprite(hungryTim)
+hungryTim.x = 50
+girl.setStayInScreen(true)
+girl.x = 100
 game.onUpdateInterval(500, function () {
     randomFoodItem = randint(0, 3)
     if (randomFoodItem == 0) {
